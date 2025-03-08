@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main (String [] args){
-        Boolean controle = true;
+        Boolean controle = false;
         int decisao;
 
 
@@ -41,6 +41,7 @@ public class Main {
             System.out.println("O que deseja? ");
             decisao = z.nextInt();
             z.nextLine();
+
             switch(decisao){
                 case 1:
                     System.out.println("Bem vindo(a), Vamos fazer sua ficha médica");
@@ -84,37 +85,47 @@ public class Main {
                     int qntFebreAmarela= intersecaoFebreAmarela.size();
                     int qntPaciente = sintomasPaciente.size();
 
+                    System.out.println(" ");
 
                     System.out.println("Os Sintomas do Paciente são: "+ sintomasPaciente);
                     System.out.println("Sintomas de Dengue: " + qntDengue + " "+intersecaoDengue);
                     System.out.println("Sintomas de Covid: " + qntCovid + " "+intersecaoCovid);
                     System.out.println("Sintomas de Febre amarela: " + qntFebreAmarela + " "+intersecaoFebreAmarela);
+                    System.out.println(" ");
 
+                    System.out.println("Sr(a). "+ nome +" aqui estão as probabilidades do seu quadro de saúde. Consulte com seu Médico");
                     System.out.println("A probabilidade de ser Dengue: ");
                     CalculoDeProbabilidade.calculoProbabilidade(qntDengue,qntPaciente);
                     System.out.println("A probabilidade de ser Covid: ");
                     CalculoDeProbabilidade.calculoProbabilidade(qntCovid,qntPaciente);
                     System.out.println("A probabilidade de ser Febre Amarela: ");
                     CalculoDeProbabilidade.calculoProbabilidade(qntFebreAmarela,qntPaciente);
+                    System.out.println(" ");
+
                     break;
                 case 2:
-                    System.out.print("Retorno de consulta");
+                    System.out.println("Retorno de consulta");
                     break;
                 case 3:
-                    System.out.print("Exames anteriores");
+                    System.out.println("Exames anteriores");
                     break;
                 case 4:
-                    System.out.print("Bem vindo(a) ao SAC");
+                    System.out.println("Bem vindo(a) ao SAC");
+                    System.out.println("Conte a sua opinião: ");
+                    String Sac = z.nextLine();
+                    System.out.print("Obrigado pela Avaliação");
                     break;
                 case 5:
-                    System.out.print("Encerrando o atendimento, Obrigado pela prefência!");
+                    System.out.println("Encerrando o atendimento, Obrigado pela prefência!");
                     controle = true;
                     break;
                 default:
-                    System.out.print("Encerrando o atendimento, Obrigado pela prefência!");
+                    System.out.println("Encerrando o atendimento, Obrigado pela prefência!");
                     controle = true;
             }
-        }while (controle != true);
+
+
+        }while (controle == false);
 
     }
 }
