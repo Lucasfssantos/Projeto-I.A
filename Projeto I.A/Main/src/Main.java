@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main (String [] args){
-        Boolean controle = false;
-        int decisao;
 
+       Boolean controle = true;
+        int decisao;
 
         Scanner z = new Scanner(System.in);
         /**
@@ -93,15 +93,8 @@ public class Main {
                     System.out.println("Sintomas de Febre amarela: " + qntFebreAmarela + " "+intersecaoFebreAmarela);
                     System.out.println(" ");
 
-                    System.out.println("Sr(a). "+ nome +" aqui estão as probabilidades do seu quadro de saúde. Consulte com seu Médico");
-                    System.out.println("A probabilidade de ser Dengue: ");
-                    CalculoDeProbabilidade.calculoProbabilidade(qntDengue,qntPaciente);
-                    System.out.println("A probabilidade de ser Covid: ");
-                    CalculoDeProbabilidade.calculoProbabilidade(qntCovid,qntPaciente);
-                    System.out.println("A probabilidade de ser Febre Amarela: ");
-                    CalculoDeProbabilidade.calculoProbabilidade(qntFebreAmarela,qntPaciente);
-                    System.out.println(" ");
 
+                    ResultadoDiagnostico.exibirResultado(qntDengue,qntCovid,qntFebreAmarela,qntPaciente);
                     break;
                 case 2:
                     System.out.println("Retorno de consulta");
